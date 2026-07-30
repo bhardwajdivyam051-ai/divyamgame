@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/ak610/Downloads/divyamgames.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Divyam Games</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Arial,Segoe UI,sans-serif;
+}
+
+body{
+
+margin:0;
+background:linear-gradient(135deg,#020617,#1e40af,#7e22ce);
+color:white;
+min-height:100vh;
+
+}
+
+
+nav{
+
+display:flex;
+justify-content:center;
+gap:15px;
+padding:20px;
+background:#0008;
+position:sticky;
+top:0;
+
+}
+
+
+nav button{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:25px;
+cursor:pointer;
+
+}
+
+
+nav button:hover{
+
+background:#60a5fa;
+
+}
+
+
+.page{
+
+display:none;
+padding:30px;
+
+}
+
+
+.active{
+
+display:block;
+
+}
+
+
+.hero{
+
+text-align:center;
+padding:50px 20px;
+
+}
+
+
+.hero h1{
+
+font-size:55px;
+text-shadow:0 0 25px cyan;
+
+}
+
+
+.card{
+
+background:white;
+color:#111;
+max-width:850px;
+margin:25px auto;
+padding:30px;
+border-radius:25px;
+box-shadow:0 20px 50px #0008;
+
+}
+
+
+
+.games{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+
+}
+
+
+
+.game{
+
+width:250px;
+padding:30px;
+text-align:center;
+border-radius:25px;
+background:linear-gradient(135deg,#f97316,#ec4899);
+transition:.3s;
+
+}
+
+
+.game:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+.coming{
+
+background:linear-gradient(135deg,#475569,#1e293b);
+
+}
+
+
+footer{
+
+text-align:center;
+padding:30px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<button onclick="openPage(&#39;home&#39;)">
+🏠 Home
+</button>
+
+<button onclick="openPage(&#39;about&#39;)">
+👨‍💻 About
+</button>
+
+<button onclick="openPage(&#39;games&#39;)">
+🎮 Games
+</button>
+
+<button onclick="openPage(&#39;soon&#39;)">
+🚀 Coming Soon
+</button>
+
+</nav>
+
+
+
+
+<div id="home" class="page">
+
+
+<div class="hero">
+
+<h1>
+🎮 Divyam Games
+</h1>
+
+<h2>
+Play • Challenge • Create
+</h2>
+
+<p>
+A gaming website created by Divyam.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Welcome
+</h2>
+
+<p>
+Enjoy fun games and exciting challenges.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div id="about" class="page">
+
+
+<div class="card">
+
+<h1>
+👨‍💻 About Divyam
+</h1>
+
+
+<p>
+Hello! I am Divyam, a Class 9 student.
+</p>
+
+
+<p>
+I like coding, technology and creating
+new projects.
+</p>
+
+
+<p>
+Divyam Games is my personal gaming project.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div id="games" class="page">
+
+
+<h1 style="text-align:center">
+🎮 Game Arena
+</h1>
+
+
+<div class="games">
+
+
+<div class="game">
+
+<h1>
+❌⭕
+</h1>
+
+<h2>
+Tic Tac Toe
+</h2>
+
+<p>
+Friend + Bot Mode
+</p>
+
+<button onclick="openPage(&#39;tic&#39;)">
+Play
+</button>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="soon" class="page active">
+
+
+<h1 style="text-align:center">
+🚀 Coming Soon
+</h1>
+
+
+<div class="games">
+
+
+<div class="game coming">
+🏓
+<h2>Pong Game</h2>
+</div>
+
+
+<div class="game coming">
+🚗
+<h2>Car Racing</h2>
+</div>
+
+
+<div class="game coming">
+🧠
+<h2>Quiz Game</h2>
+</div>
+
+
+<div class="game coming">
+🧱
+<h2>Brick Breaker</h2>
+</div>
+
+
+<div class="game coming">
+🎯
+<h2>Target Shooter</h2>
+</div>
+
+
+<div class="game coming">
+🏹
+<h2>Archery Challenge</h2>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="tic" class="page">
+
+<style>
+
+.ticBox{
+
+background:white;
+color:#111;
+max-width:500px;
+margin:auto;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 50px #0008;
+
+}
+
+
+.board{
+
+display:grid;
+grid-template-columns:repeat(3,90px);
+gap:10px;
+justify-content:center;
+margin:25px;
+
+}
+
+
+.cell{
+
+height:90px;
+width:90px;
+background:#e2e8f0;
+border-radius:15px;
+font-size:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+
+}
+
+
+.cell:hover{
+
+background:#cbd5e1;
+
+}
+
+
+.ticBox button{
+
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+margin:5px;
+
+}
+
+
+</style>
+
+
+
+<div class="ticBox">
+
+
+<h1>
+❌⭕ Tic Tac Toe
+</h1>
+
+
+<button onclick="startGame(&#39;friend&#39;)">
+👥 Friend
+</button>
+
+
+<button onclick="startGame(&#39;easy&#39;)">
+🤖 Easy Bot
+</button>
+
+
+<button onclick="startGame(&#39;hard&#39;)">
+🔥 Difficult Bot
+</button>
+
+
+
+<h3 id="turn">Your Turn</h3>
+
+
+
+<div class="board" id="board"><div class="cell">X</div><div class="cell">O</div><div class="cell">O</div><div class="cell">O</div><div class="cell">X</div><div class="cell">X</div><div class="cell">X</div><div class="cell">X</div><div class="cell">O</div></div>
+
+
+
+<button onclick="resetGame()">
+🔄 Restart
+</button>
+
+
+<button onclick="openPage(&#39;games&#39;)">
+⬅ Back
+</button>
+
+
+</div>
+
+
+<script>
+
+
+let cells=["","","","","","","","",""];
+
+let player="X";
+
+let mode="friend";
+
+let gameOver=false;
+
+
+
+function startGame(m){
+
+mode=m;
+
+resetGame();
+
+}
+
+
+
+function draw(){
+
+board.innerHTML="";
+
+cells.forEach((x,i)=>{
+
+let c=document.createElement("div");
+
+c.className="cell";
+
+c.innerHTML=x;
+
+c.onclick=function(){
+
+play(i);
+
+};
+
+board.appendChild(c);
+
+});
+
+}
+
+
+
+
+function play(i){
+
+if(cells[i] || gameOver)
+return;
+
+
+cells[i]=player;
+
+draw();
+
+
+
+if(check(player)){
+
+alert(player+" Wins!");
+
+gameOver=true;
+
+return;
+
+}
+
+
+
+if(cells.every(x=>x)){
+
+alert("Draw!");
+
+gameOver=true;
+
+return;
+
+}
+
+
+
+if(mode!="friend" && player=="X"){
+
+player="O";
+
+turn.innerHTML="Bot Thinking...";
+
+
+setTimeout(botMove,500);
+
+
+}
+
+else{
+
+player=player=="X"?"O":"X";
+
+turn.innerHTML="Turn "+player;
+
+}
+
+}
+
+
+
+
+function botMove(){
+
+
+let empty=[];
+
+
+cells.forEach((x,i)=>{
+
+if(!x)
+empty.push(i);
+
+});
+
+
+let move;
+
+
+if(mode=="hard"){
+
+move=bestMove();
+
+}
+
+else{
+
+move=empty[Math.floor(Math.random()*empty.length)];
+
+}
+
+
+
+cells[move]="O";
+
+draw();
+
+
+
+if(check("O")){
+
+alert("Bot Wins!");
+
+gameOver=true;
+
+return;
+
+}
+
+
+
+player="X";
+
+turn.innerHTML="Your Turn";
+
+}
+
+
+
+
+
+function bestMove(){
+
+
+for(let i=0;i<9;i++){
+
+if(!cells[i]){
+
+cells[i]="O";
+
+if(check("O")){
+
+cells[i]="";
+
+return i;
+
+}
+
+cells[i]="";
+
+}
+
+}
+
+
+
+for(let i=0;i<9;i++){
+
+if(!cells[i]){
+
+cells[i]="X";
+
+if(check("X")){
+
+cells[i]="";
+
+return i;
+
+}
+
+cells[i]="";
+
+}
+
+}
+
+
+if(!cells[4])
+return 4;
+
+
+let e=[];
+
+cells.forEach((x,i)=>{
+
+if(!x)e.push(i);
+
+});
+
+
+return e[Math.floor(Math.random()*e.length)];
+
+}
+
+
+
+
+function check(p){
+
+let win=[
+
+[0,1,2],
+[3,4,5],
+[6,7,8],
+[0,3,6],
+[1,4,7],
+[2,5,8],
+[0,4,8],
+[2,4,6]
+
+];
+
+
+return win.some(a=>
+
+cells[a[0]]==p &&
+cells[a[1]]==p &&
+cells[a[2]]==p
+
+);
+
+
+}
+
+
+
+
+function resetGame(){
+
+cells=["","","","","","","","",""];
+
+player="X";
+
+gameOver=false;
+
+turn.innerHTML="Your Turn";
+
+draw();
+
+}
+
+
+
+draw();
+
+
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+
+⭐ Divyam Games ⭐
+
+<br>
+
+Created by Divyam
+
+</footer>
+
+
+
+
+<script>
+
+function openPage(id){
+
+document.querySelectorAll(".page")
+.forEach(function(p){
+
+p.classList.remove("active");
+
+});
+
+
+document.getElementById(id)
+.classList.add("active");
+
+}
+
+</script>
+
+
+
+
+</body></html>
